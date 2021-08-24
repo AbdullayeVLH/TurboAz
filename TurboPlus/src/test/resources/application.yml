@@ -1,0 +1,37 @@
+server:
+  port: 7000
+
+keycloak:
+    auth-server-url: http://localhost:8180/auth
+#  auth-server-url: http://172.28.0.146:8180/auth
+    realm: Spring
+    resource: login-app
+    bearer-only: true
+    ssl-required: external
+    use-resource-role-mappings: true
+    credentials.secret: 74d4a9b9-14bb-4e5d-b14c-729bf2a8cc11
+#    credentials.secret: 02aa50e8-d8ae-43de-a563-e608397c520d
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+#    url: "jdbc:postgresql://172.28.0.178:5432/turboplus"
+    url: "jdbc:postgresql://localhost:5432/test"
+#    url: "jdbc:postgresql://192.168.0.100:5432/turboplus"
+    username: postgres
+    password: 3262015Aze3262!
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: subscriptonmanagmentmailsender@gmail.com
+    password: 32620155
+    properties.mail.smtp.auth: true
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.properties.mail.transport.protocol: smtp
+    properties.mail.debug: true
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+#    show-sql: true
